@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "stb_image_write.h": "c",
+        "sokol_time.h": "c"
+    }
+}
