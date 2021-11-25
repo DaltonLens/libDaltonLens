@@ -48,3 +48,7 @@ For more information about the math of the chosen algorithms see our article
 Simulation](https://daltonlens.org/understanding-cvd-simulation/).
 
 This library is part of the [DaltonLens project](https://daltonlens.org).
+## SVG Filters
+
+A port as SVG filter is available in the svg subfolder. It includes an
+implementation of Brettel et al., which is non-trivial. [Live demo](https://daltonlens.github.io/libDaltonLens/svg/cvd_svg_filters.html).
