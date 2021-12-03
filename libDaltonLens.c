@@ -112,44 +112,42 @@ struct DLBrettel1997Params
 
 static struct DLBrettel1997Params brettel_protan_params = {
     {
-        0.14510, 1.20165, -0.34675,
-        0.10447, 0.85316, 0.04237,
-        0.00429, -0.00603, 1.00174,
+        0.14980, 1.19548, -0.34528,
+        0.10764, 0.84864, 0.04372,
+        0.00384, -0.00540, 1.00156,
     },
     {
-        0.14115, 1.16782, -0.30897,
-        0.10495, 0.85730, 0.03776,
-        0.00431, -0.00586, 1.00155,
+        0.14570, 1.16172, -0.30742,
+        0.10816, 0.85291, 0.03892,
+        0.00386, -0.00524, 1.00139,
     },
-    { 0.00048, 0.00416, -0.00464 }
+    { 0.00048, 0.00393, -0.00441 }
 };
-
 static struct DLBrettel1997Params brettel_deutan_params = {
     {
-        0.36198, 0.86755, -0.22953,
-        0.26099, 0.64512, 0.09389,
-        -0.01975, 0.02686, 0.99289,
+        0.36477, 0.86381, -0.22858,
+        0.26294, 0.64245, 0.09462,
+        -0.02006, 0.02728, 0.99278,
     },
     {
-        0.37009, 0.88540, -0.25549,
-        0.25767, 0.63782, 0.10451,
-        -0.01950, 0.02741, 0.99209,
+        0.37298, 0.88166, -0.25464,
+        0.25954, 0.63506, 0.10540,
+        -0.01980, 0.02784, 0.99196,
     },
-    { -0.00293, -0.00645, 0.00938 }
+    { -0.00281, -0.00611, 0.00892 }
 };
-
 static struct DLBrettel1997Params brettel_tritan_params = {
     {
-        1.01354, 0.14268, -0.15622,
-        -0.01181, 0.87561, 0.13619,
-        0.07707, 0.81208, 0.11085,
+        1.01277, 0.13548, -0.14826,
+        -0.01243, 0.86812, 0.14431,
+        0.07589, 0.80500, 0.11911,
     },
     {
-        0.93337, 0.19999, -0.13336,
-        0.05809, 0.82565, 0.11626,
-        -0.37923, 1.13825, 0.24098,
+        0.93678, 0.18979, -0.12657,
+        0.06154, 0.81526, 0.12320,
+        -0.37562, 1.12767, 0.24796,
     },
-    { 0.03960, -0.02831, -0.01129 }
+    { 0.03901, -0.02788, -0.01113 }
 };
 
 void dl_simulate_cvd_brettel1997 (enum DLDeficiency deficiency, float severity, unsigned char* srgba_image, size_t width, size_t height, size_t bytesPerRow)
@@ -227,23 +225,23 @@ void dl_simulate_cvd_brettel1997 (enum DLDeficiency deficiency, float severity, 
     simulator.simulate_cvd(np.zeros((1,1,3), dtype=np.uint8), simulate.Deficiency.TRITAN, severity=1.0)
 */
 
-float dl_vienot_protan_rgbCvd_from_rgb[] = {
-    0.10889, 0.89111, -0.00000,
-    0.10889, 0.89111, 0.00000,
-    0.00447, -0.00447, 1.00000
+static float dl_vienot_protan_rgbCvd_from_rgb[] = {
+    0.11238, 0.88762, 0.00000,
+    0.11238, 0.88762, -0.00000,
+    0.00401, -0.00401, 1.00000
 };
 
-float dl_vienot_deutan_rgbCvd_from_rgb[] = {
-    0.29031, 0.70969, -0.00000,
-    0.29031, 0.70969, -0.00000,
-    -0.02197, 0.02197, 1.00000
+static float dl_vienot_deutan_rgbCvd_from_rgb[] = {
+    0.29275, 0.70725, 0.00000,
+    0.29275, 0.70725, -0.00000,
+    -0.02234, 0.02234, 1.00000
 };
 
 // WARNING: Viénot 1999 is not accurate for tritanopia. Use Brettel 1997 instead.
-float dl_vienot_tritan_rgbCvd_from_rgb[] = {
-    1.00000, 0.15236, -0.15236,
-    0.00000, 0.86717, 0.13283,
-    -0.00000, 0.86717, 0.13283
+static float dl_vienot_tritan_rgbCvd_from_rgb[] = {
+    1.00000, 0.14461, -0.14461,
+    0.00000, 0.85924, 0.14076,
+    -0.00000, 0.85924, 0.14076
 };
 
 void dl_simulate_cvd_vienot1999 (enum DLDeficiency deficiency, float severity, unsigned char* srgba_image, size_t width, size_t height, size_t bytesPerRow)
